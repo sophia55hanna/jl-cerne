@@ -1,0 +1,33 @@
+{
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^26.6.6",
+    "concurrently": "^10.0.6",
+    "husky": "^8.0.0"
+  },
+  "scripts": {
+    "generate": "npm run generate -w @puc/storage",
+    "migrate-dev": "npm run dev -w @puc/storage",
+    "migrate-reset": "npm run reset -w @puc/storage",
+    "studio": "npm run studio -w @puc/storage",
+    "seed": "npm run seed -w @puc/storage",
+    "client-dev": "npm run dev -w client",
+    "server-dev": "npm run dev -w @puc/server",
+    "dev": "concurrently \"npm run client-dev\" \"npm run server-dev\"",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "name": "puc",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "overrides": {
+    "minimatch": "^11.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9"
+  }
+}

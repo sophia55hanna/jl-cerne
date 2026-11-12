@@ -1,0 +1,26 @@
+{
+  "name": "@puc/storage",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "scripts": {
+    "generate": "node --env-file=../../.env ../../node_modules/prisma/build/index.js generate",
+    "dev": "node --env-file=../../.env ../../node_modules/prisma/build/index.js migrate dev",
+    "reset": "node --env-file=../../.env ../../node_modules/prisma/build/index.js migrate reset",
+    "studio": "node --env-file=../../.env ../../node_modules/prisma/build/index.js studio",
+    "seed": "node --env-file=../../.env ../../node_modules/prisma/build/index.js db seed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "prisma": "^7.10.1",
+    "typescript": "^7.0.2"
+  }
+}
